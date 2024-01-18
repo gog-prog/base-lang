@@ -45,8 +45,10 @@ int get_address(string to_get) {
   return retval;
 }
 
+// MAIN STARTS HERE!!!!!!!!!!
 int main() {
 
+  // initialise (most) values
   vector<int> values = {};
   vector<string> program = {};
   string line;
@@ -54,6 +56,7 @@ int main() {
   vector<int> tokens = {0};
   int current_token = 0;
 
+  // open and get program file into a readable format
   ifstream program_txt("program.txt");
 
   while (getline(program_txt, line)) {
@@ -64,7 +67,8 @@ int main() {
 
   program_txt.close();
 
-  while (tokens[0] >= PROGRAM_LENGTH) {
-    
+  // actual program
+  while (current_token < PROGRAM_LENGTH) {
+    if (program[current_token] == ) {}
   }
 }
