@@ -18,8 +18,8 @@ Stuff to make this turing complete:
 using namespace std;
 
 // print command (£)
-void print_value(string to_print) {
-  
+void print_value(string to_print, vector<int>& values = {}) {
+  if (check_address(to_print.substr(1, to_print.length())) cout << values[get_address(to_print.subtr(2, to_print.length()))] << "\n";
 }
 
 // checks whether a value to be used is an address to the values structure (return true) or if it is not (return false)
@@ -30,8 +30,9 @@ bool check_address(string to_check) {
   return true;
 }
 
+// gets an address on the values structure, found from a string which is the command
 int get_address(string to_get) {
-  if (!(to_get[0] == '@')) {
+  if (!check_address(to_get[0])) {
     return -1;
   }
 
@@ -69,6 +70,8 @@ int main() {
 
   // actual program
   while (current_token < PROGRAM_LENGTH) {
-    if (program[current_token] == ) {}
-  }
+    if (program[current_token][0] == '£') {
+      print_value(program[current_toke], values);
+    }
+    current_token++;
 }
